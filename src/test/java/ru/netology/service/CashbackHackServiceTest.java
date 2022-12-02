@@ -1,37 +1,38 @@
 package ru.netology.service;
 
-import org.testng.Assert;
+import org.junit.Assert;
+import org.junit.Test;
+
 
 public class CashbackHackServiceTest {
 
     CashbackHackService service = new CashbackHackService();
-    @org.testng.annotations.Test
+    @Test
     public void shouldBelowLimit() {
-        int amount = 999;
+        int amount = 750;
 
         int actual = service.remain(amount);
-        int expected = 1;
+        int expected = 250;
 
-        org.testng.Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
-    @org.testng.annotations.Test
+    @Test
     public void shouldLimit() {
         int amount = 1_000;
 
         int actual = service.remain(amount);
         int expected = 0;
 
-        org.testng.Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
-    @org.testng.annotations.Test
+    @Test
     public void shouldAboveLimit() {
-        int amount = 1_850;
+        int amount = 1_350;
 
         int actual = service.remain(amount);
-        int expected = 150;
-
-        org.testng.Assert.assertEquals(actual, expected);
+        int expected = 650;
+        Assert.assertEquals(expected, actual);
     }
 }
