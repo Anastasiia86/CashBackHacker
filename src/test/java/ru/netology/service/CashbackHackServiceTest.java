@@ -37,7 +37,7 @@ public class CashbackHackServiceTest {
     }
 
     @org.junit.jupiter.api.Test
-    public void testRemainBoundaryValuesThreeWithJupiter() {
+    public void testRemainBoundaryOneWithJupiter() {
         int amount = 999;
 
         int actual = service.remain(amount);
@@ -46,7 +46,7 @@ public class CashbackHackServiceTest {
         org.junit.jupiter.api.Assertions.assertEquals(expected,actual);
     }
     @org.junit.jupiter.api.Test
-    public void testRemainBoundaryValuesTwoWithJupiter() {
+    public void testRemainBoundaryTwoWithJupiter() {
         int amount = 0;
 
         int actual = service.remain(amount);
@@ -55,7 +55,7 @@ public class CashbackHackServiceTest {
         org.junit.jupiter.api.Assertions.assertEquals(expected,actual);
     }
     @org.junit.jupiter.api.Test
-    public void testRemainBoundaryValuesSixWithJupiter() {
+    public void testRemainBoundaryThreeWithJupiter() {
         int amount = 999;
 
         int actual = service.remain(amount);
